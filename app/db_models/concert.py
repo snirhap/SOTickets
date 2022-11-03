@@ -1,8 +1,4 @@
 from app import db
-# from uuid import uuid4
-
-# def generate_uuid():    
-#     return str(uuid4())
 
 class Concert(db.Model):
     __tablename__ = "concerts"
@@ -18,6 +14,3 @@ class Concert(db.Model):
         self.band_id = band_id
         self.date = date
         self.tickets_available = tickets_available
-    
-    # def __repr__(self) -> str:
-    #     return f'Concert ID: {self.id}; band: {self.band}; date: {self.date}; tickets_available: {self.tickets_available}'

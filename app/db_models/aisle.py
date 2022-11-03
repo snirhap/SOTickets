@@ -12,6 +12,3 @@ class Aisle(db.Model):
     def __init__(self, gate_id, aisle_number) -> None:
         self.gate_id = gate_id
         self.aisle_number = aisle_number
-    
-    # def __repr__(self) -> str:
-    #     return f'Concert ID: {self.id}; band: {self.band}; date: {self.date}; tickets_available: {self.tickets_available}'

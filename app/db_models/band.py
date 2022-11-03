@@ -12,6 +12,3 @@ class Band(db.Model):
         self.name = name
         self.date_formed = date_formed
         self.genre = genre
-    
-    # def __repr__(self) -> str:
-    #     return f'Band ID: {self.id}; band name: {self.name}; genre: {self.genre}'

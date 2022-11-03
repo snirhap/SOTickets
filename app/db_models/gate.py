@@ -23,6 +23,3 @@ class Gate(db.Model):
         self.seating_type = seating_type
         self.number_of_seats = number_of_seats
         self.gate_number = gate_number
-    
-    # def __repr__(self) -> str:
-    #     return f'Concert ID: {self.id}; band: {self.band}; date: {self.date}; tickets_available: {self.tickets_available}'
