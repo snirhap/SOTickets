@@ -1,0 +1,47 @@
+version: '2'
+services:
+    web:
+        container_name: sotickets
+        build: .
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/app
+        depends_on:
+            - db
+            - redis
+        links:
+            - db
+            - redis
+        environment:
+            MYSQL_ROOT_USER: '${MYSQL_ROOT_USER}'
+            MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+            MYSQL_HOST: 'db'
+            MYSQL_DATABASE: '${MYSQL_DATABASE}'
+            MAIL_SERVER: 'smtp.gmail.com'
+            MAIL_PORT: '465'
+            MAIL_USERNAME: 'User@gmail.com'
+            MAIL_PASSWORD: 'MailAppPassword'
+            JWT_SECRET_KEY: 'SECRET'
+    redis:
+        image: redis
+        ports:
+            - '6379:6379'
+        expose:
+            - '6379'
+    db:
+        image: mysql
+        hostname: db
+        container_name: db
+        restart: always
+        ports:
+            - '3306:3306'
+        expose:
+            - '3306'
+        environment:
+            MYSQL_ROOT_USER: '${MYSQL_ROOT_USER}'
+            MYSQL_ROOT_PASSWORD: '${MYSQL_ROOT_PASSWORD}'
+            MYSQL_DATABASE: '${MYSQL_DATABASE}'
+        command: --init-file /data/application/init.sql
+        volumes:
+            - ./init.sql:/data/application/init.sql
