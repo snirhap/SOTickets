@@ -45,7 +45,6 @@ class RedisManager:
             logger.error(err)
 
     def lpush_key_value(self, key, values, exp_sec=None):
-        # if not self.__redis_manager.exists(key):
         self.__redis_manager.lpush(key, *values)
         self.__redis_manager.expire(key, exp_sec)
 
