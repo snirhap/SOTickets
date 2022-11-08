@@ -12,3 +12,34 @@ There will be 3 containers:
 1. The Redis container - which will handle OTP and seat selections for each concert.
 2. The MySQL container - which will have the DB for long-term memory (such as users credentials)
 3. The app container - which will handle requests for concerts information and seat selection.
+
+In order to work with this API, you will send requests to via Postman or CURL to:
+```
+http://0.0.0.0:5000/<API_ROUTE>
+````
+
+## Users routes
+1.
+### Request
+
+`POST /register/`
+
+    curl -i -H 'Accept: application/json' http://0.0.0.0:5000/bands/
+
+### Body
+    {
+        "email": "a@a.com",
+        "username": "testuserA",
+        "password": "123456"
+    }
+
+### Response
+
+    Status: 200 OK \ False - 503 (error) \ False - 401 (user already exists)
+    Message: if any error occurred, we would like to inform the client 
+
+
+Bands routes
+
+Concerts routes
+
