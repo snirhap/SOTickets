@@ -19,19 +19,12 @@ http://0.0.0.0:5000/<API_ROUTE>
 ````
 
 ## Users routes
-1.
+
 ### Request
 
 `POST /register/`
 
-    curl -i -H 'Accept: application/json' http://0.0.0.0:5000/bands/
-
-### Body
-    {
-        "email": "a@a.com",
-        "username": "testuserA",
-        "password": "123456"
-    }
+    curl -i -H "Content-Type: application/json" -d '{"email": "a@a.com", "username": "testuserA", "password": "123456"} 'http://0.0.0.0:5000/bands/
 
 ### Response
 
@@ -39,7 +32,7 @@ http://0.0.0.0:5000/<API_ROUTE>
     Message: if any error occurred, we would like to inform the client 
 
 
-Bands routes
+## Bands routes
 
-Concerts routes
+## Concerts routes
 
