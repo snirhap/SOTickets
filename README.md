@@ -24,14 +24,7 @@ http://0.0.0.0:5000/<API_ROUTE>
 
 `POST /register/`
 
-    curl -i -H 'Accept: application/json' http://0.0.0.0:5000/bands/
-
-### Body
-    {
-        "email": "a@a.com",
-        "username": "testuserA",
-        "password": "123456"
-    }
+    curl -i -H "Content-Type: application/json" -d '{"email": "a@a.com", "username": "testuserA", "password": "123456"} 'http://0.0.0.0:5000/bands/
 
 ### Response
 
